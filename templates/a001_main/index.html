@@ -1,4 +1,48 @@
 {% extends 'base.html' %}
 {% block content %}
-<h1>Home</h1>
+<main role="main">
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+        <div class="container">
+            <h1 class="display-3">Welcome</h1>
+            <p>This is the Brussels Kangaroos Baseball and Softball Club Management Application. Here we keep our club
+                members,
+                players, game information,
+                practices
+                even statistics.
+            </p>
+            <p>Click on the button to visit our official web site.</p>
+            <p><a class="btn btn-primary btn-lg bg-dark" href="https://brusselskangaroos.be/home-2-2/"
+                    role="button">Website
+                    &raquo;</a></p>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Example row of columns -->
+        <div class="row">
+            <div class="col-md-4">
+                <h2>Members Area</h2>
+                <p>In this area you will find the club members space and membership fees.
+                    <span class="add-on"><i class="fas fa-lock"></i></span>
+                </p>
+                <p><a class="btn btn-secondary bg-dark" href="#" role="button">Go &raquo;</a></p>
+            </div>
+            <div class="col-md-4">
+                <h2>Game Area</h2>
+                <p>Everything related to players, teams, games, practices, statistics, fields and volunteering. </p>
+                <p><a class="btn btn-secondary bg-dark" href="#" role="button">Go &raquo;</a></p>
+            </div>
+            <div class="col-md-4">
+                <h2>Information Area</h2>
+                <p>Events, inscriptions, uniforms price list, documents, contacts and sponsors.</p>
+                <p><a class="btn btn-secondary bg-dark" href="#" role="button">Go &raquo;</a></p>
+            </div>
+        </div>
+
+        <hr>
+
+    </div> <!-- /container -->
+
+</main>
 {% endblock %}

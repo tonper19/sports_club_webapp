@@ -1,6 +1,6 @@
 {% load static %}
 <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-    <a class="navbar-brand" href="#"><img src="{% static 'img/goroos_logo.png' %}" class="logo"
+    <a class="navbar-brand" href="{% url 'index' %}"><img src="{% static 'img/goroos_logo.png' %}" class="logo"
             alt="Brussels Kangaroos"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
         aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
@@ -9,24 +9,32 @@
 
     <div class="collapse navbar-collapse" id="navbarsExampleDefault">
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item active mr-3">
-                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            <li {% if '/' == request.path %} class="nav-item active mr-3" {% else %} class="nav-item mr-3" {% endif %}>
+                <a class="nav-link" href="{% url 'index' %}">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item mr-3">
-                <a class="nav-link" href="signin.html">Sign in</a>
+                <a class="nav-link" href="#">Members</a>
             </li>
-            <!-- <li class="nav-item">
-            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Admin</a>
-        </li> -->
-            <li class="nav-item dropdown mr-3">
-                <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true"
-                    aria-expanded="false">Areas</a>
-                <div class="dropdown-menu" aria-labelledby="dropdown01">
-                    <a class="dropdown-item" href="#">Members Area</a>
-                    <a class="dropdown-item" href="#">Game Area</a>
-                    <a class="dropdown-item" href="#">Information Area</a>
-                </div>
+            <li class="nav-item mr-3">
+                <a class="nav-link" href="#">Games</a>
+            </li>
+            <li class="nav-item mr-3">
+                <a class="nav-link" href="#">Information</a>
             </li>
         </ul>
+        <ul class="navbar-nav ml-auto">
+            <!-- <li class="nav-item mr-3">
+                <a class="nav-link" href="register.html">
+                    <i class="fas fa-user-plus"></i> Register</a>
+            </li> -->
+            <li {% if 'signin' in request.path %} class="nav-item active mr-3" {% else %} class="nav-item mr-3"
+                {% endif %}>
+                <a class="nav-link" href="{% url 'signin' %}">
+                    <i class="fas fa-sign-in-alt"></i>
+
+                    Login</a>
+            </li>
+        </ul>
+
     </div>
 </nav>
