@@ -1,15 +1,58 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Brussels Kangaroos Club Management</title>
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+    </style>
+    <!-- Custom styles for signin must go on signin only -->
+    <!-- <link href="{% static 'css/signin.css' %}" rel="stylesheet"> -->
+    <!-- Bootstrap -->
+    <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
+    <!-- Jumbotron -->
+    <link href="{% static 'css/jumbotron.css' %}" rel="stylesheet">
+    <!-- Fonts Awesome -->
+    <link href="{% static 'css/all.css' %}" rel="stylesheet">
+    <!-- Lightbox -->
+    <link href="{% static 'css/lightbox.min.css' %}" rel="stylesheet">
+
 </head>
 
 <body>
+    <!-- modified bootstrap.css bg-dar background color to Brussels Kangaroos corporate
+    from  background-color: #343a40 !important;
+    to    background-color: #110045 !important;-->
+    <!-- Topbar  -->
+
+    <!-- Navbar  -->
+    {% include 'partials/_navbar.html' %}
     {% block content %}
     {% endblock %}
+    <!-- Footer -->
+    {% include 'partials/_footer.html' %}
+    <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.bundle.js' %}"></script>
+    <script src="{% static 'js/lightbox.min.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
 </body>
 
 </html>
